@@ -79,7 +79,7 @@ export default class App extends React.Component {
     this.setState({ location: localStorage.getItem("location") || "" });
   }
 
-  componentDidUpdate(prevProps, prevState) {
+  componentDidUpdate(_, prevState) {
     if (this.state.location !== prevState.location) {
       this.fetchWeather();
       localStorage.setItem("location", this.state.location);
